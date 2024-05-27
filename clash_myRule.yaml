@@ -266,8 +266,7 @@ proxy-groups:
 rules:
 - RULE-SET,Direct,DIRECT
 - RULE-SET,Lan,DIRECT
-- RULE-SET,AD1,REJECT
-- RULE-SET,AD2,REJECT
+- RULE-SET,AD,REJECT
 - RULE-SET,WeChat,Inside
 - RULE-SET,SteamCN,Inside
 - RULE-SET,Steam,Steam
@@ -305,11 +304,7 @@ rule-providers:
     path: ./ruleset/Lan.yaml
     <<: *domain
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
-  AD1:
-    path: ./ruleset/anti-ad.yaml
-    <<: *domain
-    url: "https://anti-ad.net/surge2.txt"
-  AD2:
+  AD:
     path: ./ruleset/Advertising.yaml
     <<: *domain
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising.yaml"
