@@ -12,35 +12,30 @@ uthc: &uthc {type: select, include-all-providers: true, url: "https://www.gstati
 ######### 锚点 end ########
 # url 里填写自己的订阅,名称不能重复
 proxy-providers:
+  Nexitally:
+    <<: *pp
+    override:
+      udp: true  # 重新声明原有的设置
+    # 经过指定代理进行下载/更新
+    proxy: DIRECT
+    path: ./proxy_providers/Nexitally.yaml
+    url: "xxx"
   BygCloud:
     <<: *pp  
       # 务必进行override,否则additional-prefix参数不生效
     override:
       udp: true  # 重新声明原有的设置
-      #ip-version: ipv4-prefer  # 重新声明原有的设置
-      # additional-prefix: "KU-"  # 添加节点前缀
     # 经过指定代理进行下载/更新
     #proxy: DIRECT
     path: ./proxy_providers/BygCloud.yaml
     url: "https://byg.zzxuh.com/api/v1/client/subscribe?token=26e6e92e9baa5ad6dd302ca6fa6e5e2c"
-  FlyingBird:
-    <<: *pp  
-      # 务必进行override,否则additional-prefix参数不生效
-    override:
-      udp: true  # 重新声明原有的设置
-      #ip-version: ipv4-prefer  # 重新声明原有的设置
-      # additional-prefix: "KU-"  # 添加节点前缀
-    # 经过指定代理进行下载/更新
-    #proxy: DIRECT
-    path: ./proxy_providers/FlyingBird.yaml
-    url: "http://fbapiv2.fbsublink.com/flydsubal/a2eppwyj6m0qrgol?clash=1&extend=1"
 # [General]
-mixed-port: 7890
-socks-port: 7891
-redir-port: 7892
-port: 7893
+mixed-port: 7897
+socks-port: 7898
+# http port
+port: 7899
 ipv6: false
-allow-lan: true
+allow-lan: false
 bind-address: "*"
 mode: rule
 log-level: info
@@ -97,11 +92,11 @@ dns:
   use-hosts: true
   use-system-hosts: true
   default-nameserver:
-    - 223.5.5.5
     - 119.29.29.29
+    - 223.5.5.5
   nameserver:
-    - 223.5.5.5
     - 119.29.29.29
+    - 223.5.5.5
   proxy-server-nameserver:
     - 114.114.114.114
     - 8.8.8.8
