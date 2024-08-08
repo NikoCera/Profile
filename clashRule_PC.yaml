@@ -19,7 +19,7 @@ proxy-providers:
     # 经过指定代理进行下载/更新
     proxy: DIRECT
     path: ./proxy_providers/Nexitally.yaml
-    url: "xxx"
+    url: "https://vrqfmm.xyz/?L2Rvd25sb2FkQ29uZmlnL1NoYWRvd1JvY2tldEltcG9ydFNlcnZpY2UuYXNweD90PXNzbiZ1cms9ZGE0YWZkYjctMWZmOS00ZWIwLThhOTItZTBjNzlhZTIyNjIzJm1tPTI3ODcwOCYwMTk5Nzk1NzNlNWU0MWQ="
   BygCloud:
     <<: *pp  
       # 务必进行override,否则additional-prefix参数不生效
@@ -42,7 +42,7 @@ log-level: info
 # 统一延迟，更换延迟计算方式，去除握手等额外延迟
 unified-delay: true
 tcp-concurrent: true
-external-controller: 127.0.0.1:9090
+external-controller: 127.0.0.1:9097
 global-ua: clash.meta
 profile:
   tracing: true
